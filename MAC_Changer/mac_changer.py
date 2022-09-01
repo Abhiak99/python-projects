@@ -11,10 +11,8 @@ parser.add_argument("-i", "--interface", dest="interface", help="The MAC Address
 parser.add_argument("-m", "--mac", dest="new_mac", help="The MAC Address you want to change")
 args = parser.parse_args()
 
-# interface = input("interface :   ")
 interface = args.interface
 
-# new_mac = input("new MAC :   ")
 new_mac = args.new_mac
 
 
