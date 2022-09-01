@@ -2,6 +2,7 @@
 
 import subprocess
 import argparse
+from time import sleep
 
 parser = argparse.ArgumentParser()
 
@@ -27,3 +28,7 @@ print("[+] Changing MAC Address for " + interface + " to "  + new_mac)
 subprocess.run("ifconfig "+ interface + " down", shell=True, check=False)
 subprocess.run("ifconfig "+ interface + " hw ether "+new_mac, shell=True, check=False)
 subprocess.run("ifconfig "+ interface + " up", shell=True, check=False)
+
+print("\n[+] Running Command ifconfig to check the new MAC Address")
+sleep(2)
+subprocess.run(["ifconfig"])
